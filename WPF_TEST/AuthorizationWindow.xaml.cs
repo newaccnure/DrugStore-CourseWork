@@ -1,0 +1,56 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
+
+namespace WPF_TEST
+{
+    /// <summary>
+    /// Логика взаимодействия для AuthorizationWindow.xaml
+    /// </summary>
+    public partial class AuthorizationWindow : Window
+    {
+        MenuItem Authorization { set; get; }
+        MenuItem Registration { set; get; }
+        public AuthorizationWindow(MenuItem authorization, MenuItem registration)
+        {
+            InitializeComponent();
+            Authorization = authorization;
+            Registration = registration;
+        }
+
+        private void AuthorizationButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Logic.CheckUser(Login.Text, password1.Password))
+            {
+                if (Login.Text == "admin")
+                {
+                    this.Hide();
+                    this.Owner.Hide();
+                    MainWindow mainWindow = new MainWindow();
+                    mainWindow.ShowDialog();
+                    this.Close();
+                    this.Owner.Close();
+                }
+                else
+                {
+                    Registration.Header = "Добро пожаловать, " + Login.Text;
+                    Authorization.Visibility = Visibility.Collapsed;
+                    Close();
+                }
+            }
+            else {
+                passwordPopup.IsOpen = true;
+            }
+        }
+    }
+}

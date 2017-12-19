@@ -1,0 +1,25 @@
+﻿<Window x:Class="WPF_TEST.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_TEST"
+        mc:Ignorable="d"
+        Title="Регистрация" Height="373.715" Width="300" WindowStartupLocation="CenterScreen">
+    <StackPanel>
+        <Label Margin="0 10 0 0" Content="Электронная почта:"/>
+        <TextBox Name="Email" FontSize="16" Margin="0 10 0 10" Height="25.6"/>
+        <Label Content="Введите свой логин:"/>
+        <TextBox Name="Login" FontSize="16" Margin="0 10 0 10" Height="25.6"/>
+        <Label Content="Введите свой пароль:"/>
+        <PasswordBox Name="password1" FontSize="16" Margin="0 10 0 10" Height="25.6"/>
+        <Label Content="Повторно введите свой пароль:"/>
+        <PasswordBox Name="password2" FontSize="16" Margin="0 10 0 10" Height="25.6"/>
+        <StackPanel>
+            <Popup Name="passwordPopup" StaysOpen="False" Placement="Center" AllowsTransparency="True">
+                <TextBlock Background="Red" Text="Неправильно введенный пароль"/>
+            </Popup>
+            <Button Content="Зарегистрироваться" Click="RegistrationButton_Click" Height="25.6"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

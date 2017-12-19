@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPF_TEST.CartWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_TEST"
+        mc:Ignorable="d"
+        Title="Корзина" Height="750" Width="750" WindowStartupLocation="CenterScreen">
+    <ScrollViewer>
+        <StackPanel>
+            <StackPanel Name="content">
+
+            </StackPanel>
+            <Label Name="Result"/>
+            <Button Content="Оформить заказ" Visibility="Hidden" Name="AddPurchase" Click="AddPurchase_Click"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>

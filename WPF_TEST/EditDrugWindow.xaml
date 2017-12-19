@@ -1,0 +1,83 @@
+﻿<Window x:Class="WPF_TEST.EditDrugWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_TEST"
+        mc:Ignorable="d"
+        Title="EditDrugWindow" Height="800" Width="1050" WindowStartupLocation="CenterScreen">
+    <ScrollViewer>
+        <StackPanel>
+            <Grid Margin="0 10 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" Orientation="Vertical" Width="350">
+                    <Label Content="Название препарата:" Margin="10"/>
+                    <TextBox Name="DrugNameTextBox" Margin="10"/>
+                    <Label Content="Цена закупки:" Margin="10"/>
+                    <TextBox Name="DrugWholesalePriceTextBox" Margin="10"/>
+                    <Label Content="Розничная цена:" Margin="10"/>
+                    <TextBox Name="RetailPriceTextBox" Margin="10"/>
+                    <Label Content="Текущее количество:" Margin="10"/>
+                    <TextBox Name="CurrentAmountTextBox" Margin="10"/>
+                    <Label Content="Вес или объем:" Margin="10"/>
+                    <TextBox Name="WeightVolumeTextBox" Margin="10"/>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <StackPanel Orientation="Horizontal" Margin="10">
+                        <Label Content="Оптовые цены"/>
+                        <Button Click="AddWPriceButton_Click">
+                            <Image Width="24" Height="26" Source="C:\Users\Андрей\Documents\Visual Studio 2017\Projects\WPF_TEST\WPF_TEST\Icons\plus.png" RenderTransformOrigin="0.5,0.531"/>
+                        </Button>
+                    </StackPanel>
+                    <StackPanel Name="WholesalePrices">
+                        
+                    </StackPanel>
+                    <Label Name="SymptomLabel" Content="Симптомы"/>
+                    <ScrollViewer Height="75">
+                        <StackPanel Name="SymptomScrollViewer">
+
+                        </StackPanel>
+                    </ScrollViewer>
+                    <Label Name="ManufacturerLabel" Content="Производитель"/>
+                    <ScrollViewer Height="75">
+                        <StackPanel Name="ManufacturerScrollViewer">
+
+                        </StackPanel>
+                    </ScrollViewer >
+                </StackPanel>
+                <StackPanel Grid.Column="2">
+                    <Image Name="DrugImage" Width="250" Height="250" Source="C:\Users\Андрей\Documents\Visual Studio 2017\Projects\WPF_TEST\WPF_TEST\Icons\minus.png"/>
+                    <Button Click="Button_Click" Content="Выбор пути"/>
+                    <Label Content="Описание:" Margin="10"/>
+                    <RichTextBox Name="DescriptionTextBox" Margin="10"/>
+                    <Label Content="Применение:" Margin="10"/>
+                    <RichTextBox Name="ApplicationTextBox" Margin="10"/>
+                    <Label Content="Противопоказания:" Margin="10"/>
+                    <RichTextBox Name="WarningTextBox" Margin="10"/>
+                </StackPanel>
+            </Grid>
+            <Grid Margin="0 10 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Height="30" Name="AddButton" Click="AddButton_Click" Grid.Row="0" Grid.Column="1" Content="Добавить"/>
+                <Button Height="30" Name="CancelButton" Click="CancelButton_Click" Grid.Row="0" Grid.Column="3" Content="Отмена"/>
+            </Grid>
+            <Image Name="TestImage" Source="{Binding}"/>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
